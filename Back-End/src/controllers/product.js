@@ -1,6 +1,5 @@
 const { default: mongoose } = require('mongoose')
 const Product=require('../models/product')
-const shortid=require('shortid')
 const slugify=require('slugify')
 
 

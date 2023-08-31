@@ -1,5 +1,5 @@
 const express=require("express")
-const env=require("dotenv")
+const env = require('dotenv')
 const mongoose=require("mongoose")
 const app=express()
 const authRoutes=require('./routes/auth')
@@ -17,9 +17,7 @@ env.config()
 mongoose.connect('mongodb+srv://harishjammu:Harish%40123@cluster0.wfrsw9w.mongodb.net/?retryWrites=true&w=majority',{
     useNewUrlParser:true,
     useUnifiedTopology:true
-    
-  
-    
+   
 })
 .then(()=>{
     console.log("Database Connected")
@@ -30,7 +28,6 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname,"uploads")));
 
 app.use('/api', authRoutes);
-
 app.use('/api', adminRoutes);
 app.use('/api', categoryRoutes);
 app.use('/api', productRoutes);
@@ -38,5 +35,5 @@ app.use('/api', cartRoutes);
 
 
 app.listen(2000,()=>{
-    console.log(`Server is runnung on Port 3000`)
+    console.log(`Server is runnung on Port 2000`)
 });
